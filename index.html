@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Beep Boop Countdown</title>
+<script>window.onload = function main () {
+"use strict"
+var audio = document.querySelector("audio")
+var ws
+create_websocket()
+
+function wait_create () { setTimeout(5000, create_websocket) }
+
+function create_websocket () {
+	ws = new WebSocket("ws://" + window.location.hostname + ":8001")
+	ws.onmessage = on_message
+	ws.onerror = wait_create
+	ws.onclose = wait_create }
+
+function on_message (message) {
+	console.log(message.data)
+	audio.play() }
+}</script>
+</head>
+<body>
+<audio src="/countdown.ogg"></audio>
+</body>
+</html>

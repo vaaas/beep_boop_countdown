@@ -2,7 +2,7 @@
 	"name": "beep_boop_countdown",
 	"description": "synchronised remote countdown",
 	"bugs": { "url": "https://github.com/vaaas/beep_boop_countdown/issues" },
-	"license": "WTFPL",
+	"license": "AGPL-3.0",
 	"dependencies": {
 		"uws": "*",
 		"determine-mime-type": "git://github.com/vaaas/determine-mime-type.git"

@@ -9,7 +9,14 @@ const os = require("os")
 const url = require("url")
 const readline = require("readline")
 const ws = require("uws")
-const determine_mime_type = require("determine-mime-type")
+
+const MIMES = {
+    "html": "text/html",
+    "oga": "audio/ogg" }
+
+function determine_mime_type (pathname) {
+    const ext = pathname.slice(pathname.lastIndexOf(".") + 1)
+    return ext in MIMES ? MIMES[ext] : "application/octet-stream" }
 
 function WebSocketServer (ip, port) {
 	const server = new ws.Server({ port: port, host: ip})

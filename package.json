@@ -4,8 +4,7 @@
 	"bugs": { "url": "https://github.com/vaaas/beep_boop_countdown/issues" },
 	"license": "AGPL-3.0",
 	"dependencies": {
-		"uws": "*",
-		"determine-mime-type": "git://github.com/vaaas/determine-mime-type.git"
+		"uws": "*"
 	},
 	"engines": {
 		"node": ">=4.0.0"
